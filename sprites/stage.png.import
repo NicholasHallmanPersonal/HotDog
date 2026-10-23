@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dayjmcayuxr1n"
-path="res://.godot/imported/stage.png-23b5c82ee4494d06cd96c395fe200b41.ctex"
+path="res://.godot/imported/stage.png-99ebdbe18c2fc238e0c4bfbf45a2ad5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stage.png"
-dest_files=["res://.godot/imported/stage.png-23b5c82ee4494d06cd96c395fe200b41.ctex"]
+source_file="res://sprites/stage.png"
+dest_files=["res://.godot/imported/stage.png-99ebdbe18c2fc238e0c4bfbf45a2ad5e.ctex"]
 
 [params]
 

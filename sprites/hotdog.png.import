@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eurqv48r0k6p"
-path="res://.godot/imported/button.png-234620e182281afdeb4aab4d2ed4f8a7.ctex"
+uid="uid://b8736ruuki1u6"
+path="res://.godot/imported/hotdog.png-e0f5562e5dbac5454a66149b0ea18195.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://button.png"
-dest_files=["res://.godot/imported/button.png-234620e182281afdeb4aab4d2ed4f8a7.ctex"]
+source_file="res://sprites/hotdog.png"
+dest_files=["res://.godot/imported/hotdog.png-e0f5562e5dbac5454a66149b0ea18195.ctex"]
 
 [params]
 
