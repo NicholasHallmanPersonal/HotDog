@@ -20,6 +20,10 @@ func open():
 
 func close():
 	print("closing")
+	# Never opened yet: the menu is already at its closed position.
+	if transition == null:
+		opened = false
+		return
 	transition.next(-1, 0.5, Transition.Ease.EASE_IN)
 	transition.start()
 	opened = false
