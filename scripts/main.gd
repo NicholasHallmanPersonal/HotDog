@@ -14,6 +14,7 @@ var stats = {
 }
 
 var last_stat_reduction = 0
+var game_over = false
 
 var handle_left: Callable = func (): pass
 var handle_right: Callable = func (): pass
@@ -67,19 +68,19 @@ func _ready() -> void:
 			reset_buttons()
 			$Bottle.show()
 			hotdog.change_state("juice")
-			var hits = 0
+			var hits = [0] # array so the lambda below mutates the shared value
 			handle_left = func (): bottle.move_left()
 			handle_right = func (): bottle.move_right()
 			handle_select = func ():
 				if bottle.sprite.frame == 1: return
 				if hotdog.get_spray_position() == bottle.get_spray_position():
-					hits += 1
+					hits[0] += 1
 				bottle.spray()
 			await get_tree().create_timer(10).timeout
 			$Bottle.hide()
 			reset_buttons()
 			hotdog.change_state("nice")
-			stats.juiciness += (5 * hits)
+			stats.juiciness += (5 * hits[0])
 			if stats.juiciness > 100: stats.juiciness = 100
 			await get_tree().create_timer(3).timeout
 			state_machine.set_state("home"),
@@ -109,6 +110,8 @@ func _ready() -> void:
 				state_machine.set_state("home")
 			hotdog.change_state(args[0]),
 		"end": func (args):
+			if game_over: return
+			game_over = true
 			var text
 			var end = $End
 			match args[0]:
@@ -123,6 +126,7 @@ func _ready() -> void:
 	}, "start")
 
 func _process(delta) -> void:
+	if game_over: return
 
 	last_stat_reduction += delta
 	if last_stat_reduction > 1:
